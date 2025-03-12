@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--<bean class="com.ivoyant.spring.Alien" id="alien" scope="prototype">-->
+
+    <bean class="com.ivoyant.spring.Alien" id="alien" autowire="byType">
+        <!--        without using propertytag we can use autowire where springframework only search for dependency
+                    2types-byName,byType-->
+
+
+        <!--        //property tag uses setter Injection-->
+        <property name="age" value="21"/>
+        <property name="com" ref="com1"/>
+        <!--        if we specify explicitly with property tag it does not prefer autowire-->
+
+        <!--        //constructor-arg for constructor injection-->
+        <!--        <constructor-arg type="com.spring.Laptop" value="21"/>-->
+        <!--        <constructor-arg type="com.spring.Alien" ref="laptop"/>-->
+
+        <!--        constructor-arg check for the sequence in order to solve we can use type attribute
+        this also not suitable  if we use multiple value of same datatype we can use index -->
+        <!--        <constructor-arg index="0" value="21"/>-->
+        <!--        <constructor-arg index="1" ref="laptop"/>-->
+
+    </bean>
+    <bean class ="com.ivoyant.spring.Laptop" id="com" primary="true" >
+    </bean>
+
+    <bean class ="com.ivoyant.spring.Desktop" id="com1" lazy-init="true">
+        <!--        if we use lazy-init object will not be created by default-->
+
+        <!--        if no-lazy object depends on lazy object still it create an object-->
+
+    </bean>
+
+</beans>

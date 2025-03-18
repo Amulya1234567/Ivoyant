@@ -43,7 +43,6 @@ public class Dml
 //        }
 
 
-//        Delete operation
         int SID=1;
         String query="DELETE FROM Student WHERE SID=?";
         int count=jdbcTemplate.update(query,SID);

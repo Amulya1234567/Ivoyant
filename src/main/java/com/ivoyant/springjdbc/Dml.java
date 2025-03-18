@@ -1,5 +1,6 @@
-package com.spring;
+package com.ivoyant.springjdbc;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -8,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
  * Hello world!
  *
  */
+@Slf4j
 public class Dml
 {
     public static void main( String[] args )
@@ -43,13 +45,13 @@ public class Dml
 //        }
 
 
-        int SID=1;
+        int SID=3;
         String query="DELETE FROM Student WHERE SID=?";
         int count=jdbcTemplate.update(query,SID);
         if(count>0){
-            System.out.println("delete success");
+            log.info("Delete is success");
         }else{
-            System.out.println("delete is not success");
+            log.error("Delete is not success");
         }
 
     }

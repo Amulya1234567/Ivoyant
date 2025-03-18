@@ -1,4 +1,4 @@
-package com.spring;
+package com.ivoyant.springjdbc;
 
 import org.springframework.jdbc.core.RowMapper;
 

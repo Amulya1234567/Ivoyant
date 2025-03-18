@@ -34,7 +34,7 @@ class Counter {
 }
 
 @AllArgsConstructor
-// First thread class
+
 class MyThread1 extends Thread {
     private Counter counter;
 

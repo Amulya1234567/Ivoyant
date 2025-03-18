@@ -8,7 +8,7 @@ public class App {
         AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(AppConfig.class);
         User ur=context.getBean(User.class);
         ur.code();
-
+//.close() is not available inside ApplicationContext
         context.close();  // ✅ Triggers @PreDestroy in User
     }
 }
